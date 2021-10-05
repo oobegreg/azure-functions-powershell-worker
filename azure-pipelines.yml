@@ -42,7 +42,7 @@ steps:
 - bash: |
     curl -sSL https://raw.githubusercontent.com/dotnet/cli/master/scripts/obtain/dotnet-install.sh | bash /dev/stdin -v '6.0.100-preview.7.21379.14' -c 'release' --install-dir /usr/share/dotnet
   displayName: 'Install the .Net version used by the Core Tools for Linux'
-  condition: eq( variables['Agent.OS'], 'Linux' )
+  condition: eq( variables['Agent.OS'], 'Window' )
 
 - pwsh: ./test/E2E/Start-E2ETest.ps1
   env:
